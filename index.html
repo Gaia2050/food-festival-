@@ -172,4 +172,13 @@
 <!-- <script src="assets/js/bootstrap.js" defer></script> -->
 <script src="./dist/app.bundle.js" defer></script>
 </body>
+<script>
+  (function() {
+    if('serviceWorker' in navigation) {
+      navigation.serviceWorker.register('./serviceWorker.js')
+        .then(() => console.log('Service Worker registered successfully'))
+        .catch(error => console.log('Service worker registration failed;', error));
+    }
+  })();
+</script>
 </html>
